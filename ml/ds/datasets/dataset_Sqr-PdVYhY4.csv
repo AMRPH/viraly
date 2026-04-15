@@ -1,0 +1,201 @@
+text,label
+This is Jigsaw.,1.0
+"He's a friendly little robot that's really, really good at only one thing.",1.0
+"Putting together any jigsaw puzzle, no matter how complicated, really, really fast.",1.0
+"It's taken us three years to get to this point, but according to our initial tests, we have hopes he might be 200 times faster than the fastest competitive jigsaw puzzler in the world.",1.0
+"So today we're going to walk through what it took to get ready for the ultimate robot versus human face-off, and along the way, we may just discover some tricks you might find helpful as a mere human jigsaw puzzler yourself.",1.0
+"To unpack how Jigsaw does what he does, I first want to give us humans some well-deserved credit.",0.0
+"Because while this seems pretty straightforward of me to be able to pick up and arrange these 12 pieces of a puzzle, I'm actually doing four very complicated tasks.",0.0
+The first is just picking up a piece.,0.0
+Have you ever stopped to think just how amazing our hands are?,0.0
+"Hiding beneath that skin are 27 bones and 34 muscles, which makes them flexible and strong, but they're also incredibly precise and dexterous. thanks to the high concentration of nerves in our fingertips for sensing pressure, textures, and temperature.",0.0
+"We've also evolved to have opposable thumbs, which makes it way easier to hold tools and to manipulate and pick things up than if it was just five fingers all side by side.",0.0
+"Step two is rotating the piece to the correct orientation, which again is pretty straightforward when you have all the abilities I just mentioned.",0.0
+"For step three, we need to move the piece into position, and that requires our whole arm.",0.0
+"As I mentioned before, most vertebrae have the same basic arm bone configuration from a human to a bat to a chicken to a turtle to a dolphin.",0.0
+"But when you include the hand, our configuration is the most technically capable arm of any living thing to have ever existed on this planet.",0.0
+"If you imagine a large cube in front of me, it's wild that us humans can move this puzzle piece to any position and orientation within that cube.",0.0
+That's really hard for a robot or pretty much any other species to do for that matter.,0.0
+"For step four, we have to decide where this piece should go.",0.0
+"And for us humans, it's hard to explain how But when we look at this, it just very quickly feels super obvious this piece should go here.",0.0
+"What's actually happening, though, is our eyes communicate visual perception to our brains, which then subconsciously synthesize a complicated combination of pattern recognition, spatial reasoning, visual memory, and executive function.",0.0
+"And as a result, in fractions of a second, the right answer just feels obvious.",0.0
+"And not to brag, but this is once again where us humans are the undisputed champions.",0.0
+Our complex brains are what make us special. we're kind of unremarkable in the animal kingdom.,0.0
+We're not faster than cheetahs or stronger than bears.,1.0
+We can't swim as well as dolphins or fly like an eagle.,1.0
+"It's our brains that make up 2% of our body weight, yet they consume 20% of our energy every day.",1.0
+"And that ratio is higher than any other living thing ever, and it's the reason we're the ultimate apex predators, because it allows for the huge survival advantages that come from tool use, planning, problem solving, language, and large-scale cooperation with other humans.",1.0
+It's all what has possibly up until this moment in history made us the best at Jigsaw Puzzles.,1.0
+"So if we wanted to make a robot that was as good or better than us at puzzles, our daunting challenge was to take the 200 million years of evolution that enabled those four steps and figure out how to translate it into things a robot can do.",0.0
+"For number one, to pick up a piece, in lieu of an opposable thumb and 27 hand bones, we used a tiny specialized suction cup that's often used to manipulate small objects on assembly lines.",0.0
+"This solenoid here can cut off and then connect to this vacuum pump, which means we can turn on the suction exactly when we want to pick it up and then turn it off exactly we want to let it go.",0.0
+"For number two, we attached the suction cup grabber of Jigsaw to this very fine-tuned donut motor that's precise to an incredible .005 degrees.",1.0
+"That means if you attached an infinitely sharp knife to the end of the motor, it could slice your birthday cake into over 65,000 pieces.",1.0
+"For number three, to move a piece around, we modified our avid CNC router we're constantly using around here for our large builds by upgrading the motors to clear path industrial servo motors.",1.0
+"These are the same motors we used on the Dominator, our autonomous domino robot.",1.0
+"Once we did this, we saw it could accurately place the puzzle piece down to 0.0005 inches.",1.0
+"That's one-tenth the width of a human hair, which means, as you can see here, Jigsaw can take the lead out of a mechanical pencil and move all around the table, and then come back and put the lead right back in.",1.0
+"So now that Jigsaw could pick up, rotate, and move any piece with terrifying precision, the only thing he lacked was step four, knowing exactly where to place the pieces.",0.0
+"And as you might guess, this was by far the hardest one to solve.",0.0
+"Because all the subconscious work performed by neural pathways in our brain that handle pattern recognition and spatial reasoning that make finding the right piece feel so obvious to us is a really, really hard problem to solve using just computer logic and code.",0.0
+"To make matters worse, just as we were really struggling to come up with a good solution to this problem, the most devastating thing that could happen as a YouTuber actually happened.",0.0
+"My friend Shane from the YouTube channel Stuff Made Here released a video about, you guessed it, a machine that solves jigsaw puzzles.",0.0
+And what you should know about Shane is he's probably the most technically capable engineer I know.,0.0
+"If there are like 15 categories that make you a good engineer, my knowledge goes pretty deep in maybe four, and I'm a generalist in the rest, but then I have people like Ian and others on my team who help fill in the gaps.",0.0
+"Shane, however, is somehow an expert in all 15, which is why you should subscribe to his channel.",0.0
+"When I told him he beat me to the finish line, he told me he personally wasn't satisfied with where he landed the project and encouraged me to keep trying.",0.0
+"So I persevered, and that's when our fortunes improved.",0.0
+"Because while filming a video in Rwanda covering the work done at Zipline where they deliver life-saving blood using autonomous drones, I got to spend some time with Ryan, their co-founder who is responsible for all their complicated software algorithms.",0.0
+"After hearing all of our challenges, by the time the plane landed on the way back home, he'd coded up a solution that ended up being the backbone that unlocked everything for us.",0.0
+"Basically, instead of trying to compete with our brains very complicated pattern matching neural network, we took a much more simple approach by completely ignoring what was printed on the puzzle. and just looked at the edges.",0.0
+"So while painting it white makes it more impressive and way harder to solve for us humans, it would make no difference to Jigsaw.",0.0
+"So to do this edge analysis, we first needed a set of eyes.",0.0
+"Well, not those eyes.",0.0
+Those are just decorative because it's no secret I love a good pair of googly eyes.,0.0
+And these were our most advanced set of googly eyes ever because the googly is controlled by two servo motors.,0.0
+Jigsaw's real eyes were just a cell phone camera.,0.0
+The idea was to run a serpentine pattern over all the pieces and take a picture of each one and then isolate them against the background. then convert the edges of every piece into four splines.,0.0
+"So if we wanted to find a match, say for this edge, we would just need to take that spline and then find the puzzle piece that had a corresponding edge spline that matched up perfectly.",0.0
+Because matching pieces share identical edges.,0.0
+"Now even for a small simple puzzle like this, that's over 200 edge comparisons that need to be made.",0.0
+So the first step is just to look at the overall length of each spline and disregard any edges that were significantly longer or shorter.,0.0
+And that typically reduces solution space by about 50%.,0.0
+"Then for the remaining candidates, we would overlay the splines and then quantify the mismatch by calculating the area between the two edge splines.",0.0
+"So two pieces that were obviously not a fit would have a lot of overlapping area, whereas two pieces that were a perfect match, the overlap area would essentially be zero.",0.0
+From there we looked at all the possible spline matchups and ranked pieces as potential matches with each other from least overlap area to most.,0.0
+"Then Jigsaw would start with one of the four corner pieces and map out the potential solution. space, which you can picture visually like this.",0.0
+"So the correct solution is the only one that finds a good fit for all 12 pieces of the puzzle, but as you can see, there's lots of forks and dead ends.",0.0
+"And that's because sometimes it was really obvious what the matching piece was, but sometimes there were three or four close contenders because the edges are so similar and our pictures weren't always perfect.",0.0
+"So Jigsaw had always picked what seemed like the best match for a set of two pieces, but at some point the puzzle would only be halfway done and there would be no more good candidates to match the edges to continue solving the puzzle and that's a dead giveaway he chose the wrong piece somewhere previously up the chain so he would work his way back to the closest fork and then choose the next best option and he would keep doing this over and over until he found a path that finally connected all 12 pieces with essentially zero spline mismatches at every connection and then at that point because he took pictures of all the pieces he knows exactly where each of them is starting from over here and he can simply assemble the puzzle using the precision he demonstrated back in steps one through three.",0.0
+"So it was working on a 12-piece puzzle, but now for the real challenge.",0.0
+"Could we scale that up to a 1,000-piece all-white puzzle?",0.0
+"Since our ultimate goal was to dominate the world's fastest human puzzle solver, we figured maxing out the number of pieces would give the advantage to the non-overwhelmable robot.",0.0
+"So after a couple more long weeks filled with plenty of late nights working through all the challenges that come from scaling up a simple prototype 100 times over, we landed here.",0.0
+It's 3 a.m.,0.0
+"After three years, we're at this moment about to fully solve it for the first time.",0.0
+What's our confidence level?,0.0
+I'd say 100%.,0.0
+Wow!,0.0
+The code always works on the first try.,0.0
+"And so with that very heavy dose of sarcasm, Jigsaw got to work starting first with taking all the pictures.",0.0
+And that took about one and a half hours.,0.0
+"And after we had the pictures and we did the prep work on them I mentioned earlier, it was time for Jigsaw to actually try and solve the 1,000 piece puzzle.",0.0
+"And astoundingly, while running on just a simple laptop, the actual time to figure out the correct placement of all 1,000 pieces was less than a minute.",0.0
+"And I love how you can actually see him working his way around the puzzle. from the top corner, solving, and then going back each time he hits a dead end to try and find a different fork in the solution space until he finds the only combination that makes them all fit perfectly.",0.0
+"So at this point, all that was left for Jigsaw to do was get to work placing the pieces, since he now knew where every single one needed to go.",0.0
+"And things were looking really good, and just as we made the mistake of having some kind of glimmer of hope, a single piece didn't quite snap into place, and then a bunch more followed right behind. discovered was there were a few very small sources of air that tended to compound on each other the more the puzzle was assembled.",0.0
+So for example there's always a little slop between any two puzzle pieces which adds up over a lot of pieces.,0.0
+Or another source of air is the whole puzzle itself shifting slightly when certain pieces were laid down.,0.0
+And this led us to realize Jigsaw was actually still missing one final important feature us impressive humans possess because if you think about it when we assemble a puzzle we first just approximately place the piece where it needs to go and then we rely on those highly sensitive nerves in our fingertips to form a feedback loop with the brain to make really tiny adjustments until we feel the piece fall into place.,0.0
+And then a double tap is the customary move to make it official.,0.0
+"But since Jigsaw doesn't have nerves in his gripper, we approximated that with a Z-height encoder on a spring-loaded linear slider.",0.0
+"And that encoder is so accurate, if you slice the human hair lengthwise into 50 pieces, Jigsaw could feel that tiny hair slice if it was resting on top of the table.",0.0
+"So now if Jigsaw went to place a piece and he could feel it hadn't quite snapped into place because it was resting too high, he would employ a wiggle routine where it would just barely translate the piece into various directions until he got the feedback from his finger that the piece was fully set down, at which point he would give it the customary final tap, like any puzzle solver worth his salt.",0.0
+"And so with Jigsaw's new hardware and software upgrades, he was ready for one more final attempt.",0.0
+"And I should mention, by the way, from a combined hardware-software perspective, this is by far the most challenging build ever on my channel, and that includes the auto bullseye dart, and the automatic domino robot dominator.",0.0
+"So if you really want to appreciate all the juicy details, including all of the source code, you can find a link to the full write-up in the video description.",0.0
+You boys ready to try this again officially for the 48th time?,0.0
+Better work this time.,0.0
+What's the confidence levels at?,0.0
+100%.,0.0
+"Have you learned nothing, Ian?",0.0
+Hit the dang button.,0.0
+"So Jigsaw got to work, and after taking pictures of all the pieces, he once again actually solved the whole puzzle in a mere 55 seconds.",0.0
+"Which meant it was time to put them all together, and thanks to the new wiggler, routine you got this jigsaw first 20 was knocked out in less than an hour Okay, I guess we can sit back down.",0.0
+"And that meant while Jigsaw was doing all the hard work, I just get to kick back and relax in a state of zen, gazing at this polar gantry sand garden that you can build yourself.",0.0
+"Because unlike the Crunch Labs build box, which is made for kids, we just launched Hackpack, which is kind of similar, it's just more advanced and created specifically for teenagers and adults.",0.0
+"With Hackpack, you get a series of really fun programmable robots delivered right to your door, where we build it together and learn step by step the kinds of engineering skills that go in to make them to build on my channel.",0.0
+They're all super fun and even useful.,0.0
+"And they'll work right out of the box, no programming required.",0.0
+"But since my goal is to get you to always level up your skills with some simple code tweaks we walk you through, you can level up the functionality of your robot or get totally creative with some hacks of your own.",0.0
+"So if you want to enhance or even just take the first step of unlocking the really fun and rewarding hobby of making stuff, just go to crushlabs.com or use the link in the video description where we're giving away one free box as an early subscriber special.",0.0
+"And back over with Jigsaw, things were looking very promising for the world record attempt of an off-the-shelf puzzle completely solved and assembled by a robot with no human intervention.",1.0
+"Some pieces would go right in, some required a little bit of wiggle, and some required a lot of wiggle.",1.0
+"But in the end, Jigsaw always came through.",1.0
+"Now feeling more confident in Jigsaw's abilities, it was time for him to meet the greatest jigsaw puzzler the human race had to offer.",1.0
+What?,1.0
+Are you done?,1.0
+"Who, fun fact, also happens to be a national Sudoku champion, Tammy McCloud.",0.0
+I'm the human who benchmarked the cloning to my child.,0.0
+"I first wanted her to face off against the best jigsaw puzzler I personally know, my dear friend Kristen Bell, aka Anna, or Veronica Mars, or Eleanor, or a bunch more.",0.0
+"Kristen, ever since I told you I was making a puzzle robot, you've been talking so much trash.",0.0
+"A little bit of trash, yeah.",0.0
+"The puzzle robot isn't here today, so instead I have a friend I want you to challenge.",0.0
+This is Tammy.,0.0
+She holds the Guinness World Record for the fastest puzzle ever solved by a human being.,0.0
+"Hi, Kristen.",1.0
+"We kick things off with a simple 30-piece puzzle, and to be honest, three, two, one, go.",1.0
+Kristen started off pretty strong.,1.0
+Where's the elephant?,1.0
+"Tammy, you don't talk while you're doing it.",1.0
+"I mean, I could trash talk, but do it.",1.0
+"You're gonna lose, Tammy, and then you hit me back.",1.0
+"Wow, that was one minute and five seconds for a 30-piece puzzle.",1.0
+I'm sweating so much.,1.0
+"And that was a pretty decisive win, but I wanted to see one more face-off, only this time with a 500-piece puzzle and a huge advantage in Kristen's favor.",1.0
+I think I'm going to help you on this one.,0.0
+Okay.,0.0
+"And with Kristin's renewed confidence, the clock started.",0.0
+"And out of the gate, Tammy was so confident in this 2v1 matchup.",0.0
+She's just doing flipping.,0.0
+"Oh my god, that's crazy organized.",0.0
+She saw no problem in helping our cause.,0.0
+Who's that little guy?,0.0
+His tail.,0.0
+She's right.,0.0
+She's right.,0.0
+"Mark, can I ask you a sincere question?",0.0
+Is this the robot?,0.0
+"Now admittedly, I did have an ulterior motive for this matchup.",0.0
+And that was espionage.,0.0
+"Tammy, I noticed you're using the box.",0.0
+What?,0.0
+"Tammy, get real.",0.0
+You have to look at the picture.,0.0
+It'll just distract me.,0.0
+I look at the textures.,0.0
+I have good color acuity.,0.0
+I have very bad shape memory.,0.0
+"So if you, say, had to go against an all-white puzzle...",0.0
+That would maybe my Achilles heel.,0.0
+"And this was a very useful bit of information, but she didn't stop there.",0.0
+Because she also told me the four tips she tells amateur jigsaw puzzlers to help them solve puzzles faster.,0.0
+"First off, dump out all the pieces and turn them over so you can see them all at the same time.",0.0
+"For number two, most people start with the edge pieces, and that's not a bad move, but it's not always the best.",0.0
+"For example, if there's a puzzle that has something like a gold frame around the outside, you should set all the edge pieces aside and then leave them till the end where there's a lot more information from the interior pieces to help with the border.",0.0
+"For tip three, look for groupings that catch your eye and organize them into piles.",0.0
+"So for example, you could organize by colors, textures, or patterns.",0.0
+"But either way, you're trying to reduce the search space into smaller chunks because scanning and pattern matching are different parts of the brain and this way you don't have to do them at the same time which makes it easier and finally if you're down to a bunch of pieces that all look the same like a blue sky sort by shape based on how many ins and outs they have and orient them all the same way this will leave you with six total piles and will make it much easier to find the final matches and i need to look no further than our current matchup oh no i look away for one minute don't look at tammy's kristen things have gotten dire to understand there must be some validity to these four steps not seeing your hands move or your eyes look at the everything done 34 minutes and two seconds 500 pieces congratulations congratulations your next puzzle match will not be against mere humans and indeed after setting things up at crunch labs we were ready to go tammy i'd like to officially introduce you to jigsaw This is my upgrade from Kristen.",0.0
+And Jigsaw was in no mood for conversation as he got straight to work.,1.0
+Alright then.,1.0
+As Tammy entered the matchup of her life with the weight of all humanity resting on her capable shoulders.,1.0
+What's your strategy here?,1.0
+The only shape I can make use of is the edge.,1.0
+Okay.,1.0
+"How we doing, Jigsaw?",1.0
+"Not really sure what I'm supposed to do now, but that's what I remembered I had a specialized skill set of my own I might need to take measurements on your neck later.",1.0
+"I'm making you something That's why you don't have any pieces to get on your team Wow Tammy, you're familiar with the saying measure once cut twice.",1.0
+"No, that's not it And as if on cue My teammate wrapped up his measuring.",0.0
+There's a corner piece and began cutting Did you have to make him so noisy?,0.0
+"Tammy, ignore me.",0.0
+Saying five pieces!,0.0
+It ain't over till it's over.,0.0
+"You're still winning, Tammy.",0.0
+Don't let it get to your head.,0.0
+"And while I was tempted to count all 1,009 pieces, I decided to take up woodworking instead.",0.0
+"Are you nervous, Tammy?",0.0
+"Even if I lost today, my family would still love me.",0.0
+"Jigsaw, if he lost today, would you still love him?",1.0
+No. My love is very conditional.,1.0
+"Having properly remind Jigsaw what was at stake, Jigsaw has now officially taken the lead.",1.0
+"Jigsaw continued to make steady progress, while Tammy...",1.0
+Where's that last edge?,1.0
+"Oh, you need one edge piece.",1.0
+Face the limits inherent in biology.,1.0
+I really want to actually help find this for you.,1.0
+That way I could say you needed my help.,1.0
+Without the precise search capabilities...,1.0
+I found it.,1.0
+I'm done with the edge. ...of a smartphone to laptop nervous system.,1.0
+Click.,1.0
