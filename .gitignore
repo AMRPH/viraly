@@ -1,3 +1,9 @@
+# Local credentials
+.env.*
+!.env.example
+*.pem
+*.key
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from datetime import timedelta
 from corsheaders.defaults import default_headers, default_methods
@@ -13,7 +14,7 @@ MEDIA_ROOT = 'files'
 MAX_VIDEO_DURATION = 3600*3  # 3 часа
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'REMOVED_SECRET'
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -56,7 +57,7 @@ INSTALLED_APPS = [
 
 # Celery
 # CELERY_BROKER_URL = 'amqp://localhost'
-CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
+CELERY_BROKER_URL = os.environ['CELERY_BROKER_URL']
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
@@ -81,8 +82,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'viraly.verify@gmail.com'
-EMAIL_HOST_PASSWORD = 'REMOVED_SECRET'
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 
 
 # JWT настройки
@@ -140,11 +141,11 @@ ASGI_APPLICATION = "backend.asgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'viraly',
-        'USER': 'admin',
-        'PASSWORD': 'REMOVED_SECRET',
-        'HOST': '213.232.228.227',
-        'PORT': '5432',
+        'NAME': os.environ['POSTGRES_DB'],
+        'USER': os.environ['POSTGRES_USER'],
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
+        'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
 
